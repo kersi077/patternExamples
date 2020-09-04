@@ -24,8 +24,7 @@ public class Configuration {
     private Configuration() {}
 
     public static Configuration getInstance() {
-        if( instance == null )
-            instance = new Configuration();
+        //TODO: instance is NULL! Complete the code!
         return instance;
     }
 
@@ -43,6 +42,6 @@ public class Configuration {
     }
 
     public void addConfig(String key, String value) {
-        configurationValues.put(key, value);
+       //TODO: Complete the code
     }
 }

@@ -7,7 +7,6 @@ import org.kersevanivan.config.load.ConfigurationNotFoundException;
 import java.io.*;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.Properties;
 
 /**
  * <p>Title: FileConfigurationLoad</p>
@@ -32,13 +31,7 @@ public class FileConfigurationLoad implements ConfigurationLoad {
 
     @Override
     public Optional<Configuration> loadConfiguration() throws ConfigurationNotFoundException {
-        Properties properties = new Properties();
-        try {
-            properties.load(new FileInputStream(this.configFile));
-            properties.forEach( (key, value)-> { Configuration.getInstance().addConfig((String)key, (String)value); }  );
-            return Optional.of(Configuration.getInstance());
-        } catch (IOException e) {
-           throw new ConfigurationNotFoundException(e);
-        }
+        return Optional.empty(); // TODO: write code, which loads the configuration from a file.
+        // The configuration is stored like key=value in the file. Look into the folder testfiles for examples.
     }
 }
